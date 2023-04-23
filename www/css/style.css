@@ -1,0 +1,39 @@
+/* Color scheme */
+:root {
+    --columbia-blue: #b4c6ceff;
+    --feldgrau: #5d7164ff;
+    --battleship-gray: #7b897dff;
+    --outer-space: #3f4f52ff;
+    --powder-blue: #9bb9d4;
+}
+/* Media widths */
+@media screen and (min-width: 801px) {
+    main {
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
+@media screen and (max-width: 800px) {
+    main {
+      width: 100%;
+      min-width: 400px;
+    }
+}
+
+body {
+    background-color: var(--battleship-gray);
+}
+
+.recipy {
+    background-color: var(--columbia-blue);
+}
+
+.swagger-link {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 3px;
+    background-color: rgba(252, 255, 240, 0.397);
+    color: black;
+}
