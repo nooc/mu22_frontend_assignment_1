@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="sv">
-<title>Recept Hjälparen</title>
 <head>
+    <title>Recept Hjälparen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -13,11 +12,17 @@
 
     <main class="recipy">
 
-        <head class="recipy-description">
-            <h1 class="description-title">Recipy name</h1>
-            <summary class="description-summary">Short</summary>
-            <details class="description-details">Extended</details>
-        </head>
+        <header class="recipy-description">
+            <select class="recipy-selector block">
+                <option value="" selected="selected" hidden="hidden">Välj Recept</option>
+            </select>
+            <div class="description-image"></div>
+            <h1 class="description-title">&nbsp;</h1>
+            <details open class="description-details">
+                <summary class="description-summary">&nbsp;</summary>
+                <p>&nbsp;</p>
+            </details>
+        </header>
 
         <nav class="recipy-control">
 Recipy picker
@@ -52,5 +57,6 @@ Instructions.
 
     </main>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
