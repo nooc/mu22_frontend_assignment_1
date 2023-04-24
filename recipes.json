@@ -1,0 +1,181 @@
+[
+    {
+        "title": "Chokladbollar",
+        "image": "chokladbollar.jpg",
+        "summary": "Baka jättegoda chokladbollar med havregryn och kakao.",
+        "details": "<p>Ett svenskt klassiskt bakverk som de flesta tycker om, både barn och vuxna, som även kallas kokosbollar. Havrebollar är liknande men inte samma sak som dessa.</p><p>Det här är ett väl beprövat recept som är svårt att misslyckas med. En extra bonus att de bakas utan ugn, perfekt för barn att baka själva.</p><p>Bollarna kan man antingen rulla i kokosflingor eller pärlsocker. Servera dem kylskåpskalla, gärna till fika, som godis eller på barnkalaset.</p>",
+        "time": 30,
+        "num_default": 20,
+        "num_min": 10,
+        "num_max": 40,
+        "num_suffix": "st",
+        "ingredients": [
+            {
+                "name": "Deg",
+                "amount": 0,
+                "unit": null
+            },
+            {
+                "name": "Smör",
+                "amount": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Strösocker",
+                "amount": 1.5,
+                "unit": "dl"
+            },
+            {
+                "name": "Vaniljsocker",
+                "amount": 1,
+                "unit": "msk"
+            },
+            {
+                "name": "Bryggt kaffe",
+                "amount": 3,
+                "unit": "msk"
+            },
+            {
+                "name": "Kakao",
+                "amount": 4,
+                "unit": "msk"
+            },
+            {
+                "name": "Havregryn",
+                "amount": 3.5,
+                "unit": "dl"
+            },
+            {
+                "name": "Kokosflingor",
+                "amount": 1,
+                "unit": "dl"
+            },
+            {
+                "name": "Garnering",
+                "amount": 0,
+                "unit": null
+            },
+            {
+                "name": "Kokosflingor",
+                "amount": 0.75,
+                "unit": "dl"
+            }
+        ],
+        "instructions": [
+            "Mät upp smör, strösocker och vaniljsocker i en bunke. Låt stå framme i rumstemperatur tills smöret blivit rumsvarmt. Vispa till en jämn smet med elvisp.",
+            "<p>Tillsätt kaffe, kakao, havregryn och kokosflingor och rör till en jämn smet med elvisp.</p><p>Kör gärna lite extra, gärna ca 5 minuter med elvispen så blir smeten ännu godare.</p>",
+            "<p>Häll upp kokosflingor eller pärlsocker i en djup tallrik. Rulla bollar i valfri storlek av smeten och rulla bollarna i kokosflingorna eller pärlsockret.</p><p>Lägg chokladbollarna i en burk och förvara i kylskåp. De går också att frysa in.</p>",
+            "<p>Servera chokladbollarna kylskåpskalla, då är de godast.</p><p>Man kan också låta dom stå framme i rumstemperatur en stund så blir de mjukare men även kladdigare.</p>"
+        ],
+        "reviews": [
+            {
+                "text": "Goda bollar",
+                "rating": 3,
+                "author": "Bob"
+            }
+        ]
+    },
+    {
+        "title": "Pekanpaj",
+        "image": "pekanpaj.jpg",
+        "summary": "En helt ljuvligt god pekanpaj som är en amerikansk specialité, pecan pie.",
+        "details": "En mjuk salt kolafyllning med hackade pekannötter i som ger en perfekt crunch och smak som blir himmelskt god. En perfekt smakkombo med salt, sött, mjukt och crunchy. En fantastiskt god och lyxig efterrättspaj.",
+        "time": 90,
+        "num_default": 8,
+        "num_min": 8,
+        "num_max": 16,
+        "num_suffix": "portioner",
+        "ingredients": [
+            {
+                "name": "Pajdeg",
+                "amount": 0,
+                "unit": null
+            },
+            {
+                "name": "Vetemjöl",
+                "amount": 2.5,
+                "unit": "dl"
+            },
+            {
+                "name": "Salt",
+                "amount": 2,
+                "unit": "krm"
+            },
+            {
+                "name": "Strösocker",
+                "amount": 1,
+                "unit": "tsk"
+            },
+            {
+                "name": "Smör",
+                "amount": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Vatten",
+                "amount": 2,
+                "unit": "msk"
+            },
+            {
+                "name": "Fyllning",
+                "amount": 0,
+                "unit": null
+            },
+            {
+                "name": "Pekannötter",
+                "amount": 200,
+                "unit": "g"
+            },
+            {
+                "name": "smör",
+                "amount": 125,
+                "unit": "g"
+            },
+            {
+                "name": "Ljus sirap",
+                "amount": 2,
+                "unit": "dl"
+            },
+            {
+                "name": "Ägg",
+                "amount": 3,
+                "unit": "st"
+            },
+            {
+                "name": "Vaniljsocker",
+                "amount": 1,
+                "unit": "tsk"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "tsk"
+            },
+            {
+                "name": "Servering",
+                "amount": 0,
+                "unit": null
+            },
+            {
+                "name": "Vispgrädde",
+                "amount": 4,
+                "unit": "dl"
+            }
+        ],
+        "instructions": [
+            "Mät upp vetemjöl, salt och strösocker i en bunke. Blanda.",
+            "Tillsätt smöret skuret i bitar och vatten.",
+            "Arbeta ihop till en deg för hand eller med maskin.",
+            "Tryck ut pajdegen i pajformen så den blir jämntjock. Nagga med en gaffel och ställ in i kylskåpet under tiden du gör fyllningen (eller längre tid).",
+            "Börja med fyllningen. Hacka pekannötterna grovt.",
+            "Smält smöret, när drygt hälften smält, tag bort från värmen. Rör om tills resten av smöret smält.",
+            "Tillsätt sirap och ägg. Vispa med en handvisp till en jämn smet.",
+            "Sätt kastrullen på plattan och värm på medelhög värme under vispning. När smeten börjar tjockna, sänk värmen och låt koka försiktigt ca 2-3 minuter, rör om då och då.",
+            "Tag bort kastrullen från värmen och tillsätt de hackade pekannötterna, vaniljsocker och salt. Blanda till en jämn smet med handvispen. Nu är fyllningen klar.",
+            "Häll fyllningen i det ogräddade pajskalet.",
+            "Grädda pekanpajen i nedre delen av ugnen i 150°C i 40 minuter.",
+            "Låt pekanpajen svalna och servera ljummen, rumstempererad eller kylskåpskall med vispad grädde."
+        ],
+        "reviews": []
+    }
+]
