@@ -4,8 +4,8 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import PlainTextResponse
 from starlette.responses import RedirectResponse
 
-from app.service import Recipes
 from app.model import Recipe
+from app.service import Recipes
 
 from .dependencies import recipes_dep
 
@@ -27,5 +27,4 @@ def redirect_to_docs():
 def get_recipes(
     repo:Recipes = Depends(recipes_dep)
 ) -> Any:
-    
     return repo.get_recipes()
