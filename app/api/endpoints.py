@@ -1,10 +1,9 @@
 from typing import Any
 
-from fastapi import APIRouter, Depends
-from fastapi.responses import PlainTextResponse
+from fastapi import APIRouter, Body, Depends, Path
 from starlette.responses import RedirectResponse
 
-from app.model import Recipe
+from app.model import Recipe, Review, ReviewInput
 from app.service import Recipes
 
 from .dependencies import recipes_dep
@@ -28,3 +27,15 @@ def get_recipes(
     repo:Recipes = Depends(recipes_dep)
 ) -> Any:
     return repo.get_recipes()
+
+@api_routes.post(
+    '/review/{recipy_id}',
+    description='Post a review for recipy.',
+    response_model=Review
+)
+def post_review(
+    recipy_id:int = Path(),
+    review:ReviewInput = Body(),
+    repo:Recipes = Depends(recipes_dep)
+) -> Any:
+    return repo.add_review(recipy_id, review)

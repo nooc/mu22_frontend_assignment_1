@@ -15,9 +15,7 @@ class RecipeBase(BaseModel):
     num_suffix:str
 
 class Recipe(RecipeBase):
+    id:Optional[int] = None
     ingredients:Optional[list[Ingredient]] = []
     instructions:Optional[list[str]] = []
     reviews:Optional[list[Review]] = []
-
-class RecipeDb(RecipeBase):
-    id:Optional[int] = None

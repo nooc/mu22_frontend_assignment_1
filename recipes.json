@@ -1,7 +1,9 @@
 [
     {
+        "id": 1,
         "title": "Chokladbollar",
         "image": "chokladbollar.jpg",
+        "url": "https://www.recepten.se/recept/chokladbollar.html",
         "summary": "Baka jättegoda chokladbollar med havregryn och kakao.",
         "details": "<p>Ett svenskt klassiskt bakverk som de flesta tycker om, både barn och vuxna, som även kallas kokosbollar. Havrebollar är liknande men inte samma sak som dessa.</p><p>Det här är ett väl beprövat recept som är svårt att misslyckas med. En extra bonus att de bakas utan ugn, perfekt för barn att baka själva.</p><p>Bollarna kan man antingen rulla i kokosflingor eller pärlsocker. Servera dem kylskåpskalla, gärna till fika, som godis eller på barnkalaset.</p>",
         "time": 30,
@@ -69,15 +71,22 @@
         ],
         "reviews": [
             {
-                "text": "Goda bollar",
+                "text": "Goda bollar. passar bra till en kopp kaffe!",
+                "rating": 4,
+                "name": "Sigge"
+            },
+            {
+                "text": "Helt okej!",
                 "rating": 3,
-                "author": "Bob"
+                "name": "Tor"
             }
         ]
     },
     {
+        "id": 2,
         "title": "Pekanpaj",
         "image": "pekanpaj.jpg",
+        "url": "https://www.recepten.se/recept/pekanpaj.html",
         "summary": "En helt ljuvligt god pekanpaj som är en amerikansk specialité, pecan pie.",
         "details": "En mjuk salt kolafyllning med hackade pekannötter i som ger en perfekt crunch och smak som blir himmelskt god. En perfekt smakkombo med salt, sött, mjukt och crunchy. En fantastiskt god och lyxig efterrättspaj.",
         "time": 90,

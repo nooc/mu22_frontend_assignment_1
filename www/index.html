@@ -2,57 +2,74 @@
 <html lang="sv">
 <head>
     <title>Recept Hjälparen</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-    <div class="swagger-link">go to <a href="/api-doc">Swagger</a> page.</div>
+    <div class="swagger-link">Gå till <a href="/api-doc">Swagger</a> sidan.</div>
 
-    <main class="recipy">
+    <main class="page">
 
-        <header class="recipy-description">
-            <select class="recipy-selector block">
-                <option value="" selected="selected" hidden="hidden">Välj Recept</option>
-            </select>
-            <div class="description-image"></div>
-            <h1 class="description-title">&nbsp;</h1>
-            <details open class="description-details">
-                <summary class="description-summary">&nbsp;</summary>
-                <p>&nbsp;</p>
-            </details>
+        <header id="pageHdr">
+            <nav class="hdr-nav">
+                <h1 class="center">Recept Hjälparen</h1>
+                <select id="navSel">
+                    <option value="" selected="selected" hidden="hidden">Välj Recept</option>
+                </select>
+            </nav>
         </header>
 
-        <nav class="recipy-control">
-Recipy picker
-        </nav>
-
-        <section class="recipy-ingredients">
-Ingredients
+        <section class="page-default" style="display: block;">
+            <div class="default-image"></div>
         </section>
 
-        <aside class="recipy-instructions">
-Instructions.
+        <section id="pageInfo" style="display: none;">
+            <div id="infoImage"></div>
+            <h2 id="infoTitle">&nbsp;</h2>
+            <details open class="infoDetailsWrap">
+                <summary id="infoSummary">&nbsp;</summary>
+                <p id="infoDetails">&nbsp;</p>
+            </details>
+            <p id="infoSource">-</p>
+        </section>
+
+        <section id="pageIngr" style="display: none;">
+            <h2>Ingredienser</h2>
+            <input type="range" min="1" max="10" value="1" id="ingrServings">
+            <p><span id="ingrNum">-</span> <span id="ingrSuff">-</span><br/>&nbsp;</p>
+            <ul id="ingrList"></ul>
+        </section>
+
+        <aside id="pageInstr" style="display: none;">
+            <h2>Instruktioner</h2>
+            <ol id="instrList"></ol>
         </aside>
 
-        <section class="recipy-comments">
-            <article class="comments-item">
-                <p>Comment 1</p>
-                <time>2023-01-01</time>
-            </article>
-
-            <article class="comments-item">
-                <p>Comment 2</p>
-                <time>2023-02-01</time>
-            </article>
-
-            <form>
-            </form>
+        <section id="pageRev" style="display: none;">
+            <div id="revList"></div>
+            <details open>
+                <summary class="center bold">Recensera receptet!</summary>
+                <form>
+                    <input type="hidden" id="rating" name="rating" value="0" />
+                    <label for="email">Email</label>
+                    <input name="email" type="email" class="input-item" />
+                    <label for="name">Namn</label>
+                    <input name="name" type="text" class="input-item" />
+                    <label for="text">Recension</label>
+                    <textarea name="text" class="input-item"></textarea>
+                    <label for="revRating">Stjärnor</label>
+                    <div id="revRating" style="display: block;"></div>
+                    &nbsp;
+                    <button type="submit">Skicka Recension</button>
+                </form>
+            </details>
         </section>
 
-        <footer class="recipy-footer">
-            Footer
+        <footer class="center">
+            Copyright © 2023
         </footer>
 
     </main>

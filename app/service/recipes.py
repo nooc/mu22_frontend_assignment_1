@@ -1,8 +1,6 @@
 import json
 
-from app.model import Recipe
-from app.model import Ingredient
-from app.model import Review
+from app.model import Recipe, Review, ReviewInput
 
 from . import Database
 
@@ -13,21 +11,17 @@ class Recipes():
         self.__db = db
 
     def get_recipes(self) -> list[Recipe]:
-        with open('recipes.json','rb') as f:
-            data = json.load(f)
+        #TODO: Use database
         result = []
-        for recipe in data:
-            r = Recipe(**recipe)
-            for ing in recipe['ingredients']:
-                r.ingredients.append(Ingredient(**ing))
-            r.instructions = recipe['instructions']
-            for rev in recipe['reviews']:
-                r.reviews.append(Review(**rev))
-            result.append(r)
+        with open('recipes.json','rb') as f:
+            recipes = json.load(f)
+            for recipe in recipes:
+                result.append(Recipe(**recipe))
         return result
     
-    def add_review(self, recipe_id:int, text:str):
-        pass
+    def add_review(self, recipy_id:int, review:ReviewInput) -> Review:
+        self.__db.put_object('review', review.dict())
+        return Review(**review)
 
 
-__all__ = ('Recipes', 'Recipe','Ingredient')
+__all__ = ('Recipe','ReviewInput')

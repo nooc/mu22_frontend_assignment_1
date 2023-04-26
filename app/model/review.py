@@ -2,11 +2,13 @@ from typing import Optional
 from pydantic import BaseModel
 
 class Review(BaseModel):
-    author:str
+    name:str
     text:str
     rating:int
 
-class ReviewDb(Review):
+class ReviewInput(Review):
+    email:int
+
+class ReviewDb(ReviewInput):
     id:Optional[int] = None
-    user_id:int
     recipe_id:int

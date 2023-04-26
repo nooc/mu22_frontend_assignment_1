@@ -18,25 +18,25 @@ class Database():
 )''',
         '''CREATE TABLE IF NOT EXISTS "review" (
     "id"	INTEGER NOT NULL,
-    "user_id"	INTEGER NOT NULL,
     "recipe_id"	INTEGER NOT NULL,
-    "author"	TEXT NOT NULL,
+    "email"	TEXT NOT NULL UNIQUE,
     "text"	TEXT NOT NULL,
     "rating"	INTEGER NOT NULL,
-    PRIMARY KEY("id" AUTOINCREMENT)
-)''',
-        '''CREATE TABLE IF NOT EXISTS "user" (
-    "id"	INTEGER NOT NULL,
-    "name"	TEXT NOT NULL,
-    "email"	TEXT NOT NULL UNIQUE,
-    "password"	TEXT NOT NULL,
-    PRIMARY KEY("id" AUTOINCREMENT)
+    PRIMARY KEY("id" AUTOINCREMENT),
+    FOREIGN KEY("recipe_id") REFERENCES "recipe"("id") on delete cascade
 )''',
         '''CREATE TABLE IF NOT EXISTS "ingredient" (
     "id"	INTEGER NOT NULL,
     "name"	TEXT NOT NULL,
     "amount"	INTEGER NOT NULL,
     "unit"	TEXT,
+    "recipe_id"	INTEGER NOT NULL,
+    PRIMARY KEY("id" AUTOINCREMENT),
+    FOREIGN KEY("recipe_id") REFERENCES "recipe"("id") on delete cascade
+)''',
+        '''CREATE TABLE IF NOT EXISTS "step" (
+    "id"	INTEGER NOT NULL,
+    "text"	TEXT NOT NULL,
     "recipe_id"	INTEGER NOT NULL,
     PRIMARY KEY("id" AUTOINCREMENT),
     FOREIGN KEY("recipe_id") REFERENCES "recipe"("id") on delete cascade
@@ -63,6 +63,7 @@ class Database():
         with self.__con.execute(f'select * from ?', parameters=(type)) as c:
             return c.fetchall()
 
-    def put_object(self, type:str, item):
-        self.__con.execute(f'insert into ? values ?', [item])
+    def put_object(self, type:str, item:dict):
+        cols = ','.join(item.keys())
+        self.__con.execute(f'insert into {type} ({cols}) values ?', item.values())
         self.__con.commit()
