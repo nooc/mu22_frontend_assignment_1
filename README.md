@@ -2,13 +2,13 @@
 
 ## About
 
-A recipe helper that lets you adjust amounts and review on recipes.
+A recipe helper that lets you adjust amounts and review recipes.
 
-Also comes with a backend.
+Comes with a simple backend.
 
 ## Setup
 
-Create a virtual environment:
+Create a virtual environment in the repository root:
 
     python -m venv .venv
 
@@ -22,7 +22,7 @@ Posix
 
     ./.venv/bin/activate
 
-Install dependencies:
+Install dependencies into our virtual environment:
 
     python -m pip install -r requirements.txt
 
