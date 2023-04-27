@@ -1,9 +1,10 @@
+import sqlite3
 from typing import Any
 
-from fastapi import APIRouter, Body, Depends, Path
+from fastapi import APIRouter, Body, Depends, status, HTTPException
 from starlette.responses import RedirectResponse
 
-from app.model import Recipe, Review, ReviewInput
+from app.model import Recipe, ReviewBase, ReviewInput, RecipeInput
 from app.service import Recipes
 
 from .dependencies import recipes_dep
@@ -29,13 +30,29 @@ def get_recipes(
     return repo.get_recipes()
 
 @api_routes.post(
-    '/review/{recipy_id}',
-    description='Post a review for recipy.',
-    response_model=Review
+    '/recipes',
+    description='Post list of recipes.'
+)
+def post_recipes(
+    recipes:list[RecipeInput] = Body(),
+    repo:Recipes = Depends(recipes_dep)
+) -> Any:
+    for recipe in recipes:
+        repo.put_recipe(recipe)
+    return 'OK'
+
+@api_routes.post(
+    '/review',
+    description='Post a review for recipe.',
+    response_model=ReviewBase
 )
 def post_review(
-    recipy_id:int = Path(),
     review:ReviewInput = Body(),
     repo:Recipes = Depends(recipes_dep)
 ) -> Any:
-    return repo.add_review(recipy_id, review)
+    try:
+        return repo.add_review(review)
+    except sqlite3.IntegrityError:
+        raise HTTPException(status.HTTP_409_CONFLICT)
+    except:
+        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR)

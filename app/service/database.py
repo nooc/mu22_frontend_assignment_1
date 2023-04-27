@@ -1,5 +1,7 @@
 import sqlite3
 from typing import Any
+
+from pydantic import BaseModel
 from app.config import settings
 
 class Database():
@@ -8,18 +10,21 @@ class Database():
         '''CREATE TABLE IF NOT EXISTS "recipe" (
     "id"	INTEGER NOT NULL,
     "title"	TEXT NOT NULL,
+    "image"	TEXT NOT NULL,
     "summary"	TEXT NOT NULL,
     "details"	TEXT,
     "time"	INTEGER NOT NULL,
     "num_default"	INTEGER NOT NULL,
     "num_min"	INTEGER NOT NULL,
     "num_max"	INTEGER NOT NULL,
+    "num_suffix"	TEXT NOT NULL,
     PRIMARY KEY("id" AUTOINCREMENT)
 )''',
         '''CREATE TABLE IF NOT EXISTS "review" (
     "id"	INTEGER NOT NULL,
     "recipe_id"	INTEGER NOT NULL,
     "email"	TEXT NOT NULL UNIQUE,
+    "name"	TEXT NOT NULL,
     "text"	TEXT NOT NULL,
     "rating"	INTEGER NOT NULL,
     PRIMARY KEY("id" AUTOINCREMENT),
@@ -34,7 +39,7 @@ class Database():
     PRIMARY KEY("id" AUTOINCREMENT),
     FOREIGN KEY("recipe_id") REFERENCES "recipe"("id") on delete cascade
 )''',
-        '''CREATE TABLE IF NOT EXISTS "step" (
+        '''CREATE TABLE IF NOT EXISTS "instruction" (
     "id"	INTEGER NOT NULL,
     "text"	TEXT NOT NULL,
     "recipe_id"	INTEGER NOT NULL,
@@ -56,14 +61,22 @@ class Database():
             
 
     def get_object(self, type:str, id:Any) -> Any:
-        with self.__con.execute(f'select * from ? where id = ?', parameters=(type, id)) as c:
-            return c.fetchone()
+        cur = self.__con.execute(f'select * from ? where id = ?', (type, id))
+        return cur.fetchone()
 
     def get_all_objects(self, type:str) -> Any:
-        with self.__con.execute(f'select * from ?', parameters=(type)) as c:
-            return c.fetchall()
+        cur = self.__con.execute(f'select * from {type}')
+        return cur.fetchall()
+    
+    def query(self, type:str, where:str, params:dict) -> Any:
+        cur = self.__con.execute(f'select * from {type} where {where}', params)
+        return cur.fetchall()
 
-    def put_object(self, type:str, item:dict):
-        cols = ','.join(item.keys())
-        self.__con.execute(f'insert into {type} ({cols}) values ?', item.values())
+    def put_object(self, type:str, item:BaseModel) -> int:
+        itm_d = item.dict()
+        cols = ','.join(itm_d.keys())
+        vals = ','.join(['?']*len(itm_d))
+        cur = self.__con.execute(f'insert into {type} ({cols}) values ({vals})', list(itm_d.values()))
+        row_id = cur.lastrowid
         self.__con.commit()
+        return row_id

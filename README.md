@@ -2,7 +2,9 @@
 
 ## About
 
-A recipe database that lets you adjust amounts and comment on recipes.
+A recipe helper that lets you adjust amounts and review on recipes.
+
+Also comes with a backend.
 
 ## Setup
 
@@ -37,4 +39,20 @@ This will run te server using uvicorn on port 8080.
 | Page | URL |
 | --- | --- |
 | Recipe page | http://lohalhost:8080 |
-| Swagger | http://lohalhost:8080/docs |
+| Swagger | http://localhost:8080/api-doc |
+
+## REST Api
+
+See Swagger page (Usage).
+
+| Path | Description |
+| --- | --- |
+| GET /recipes | Get recipes. |
+| POST /recipes | Import recipes into database. |
+| POST /review | Post a review for a recipe. |
+
+## Notes
+
+The database file is included in this git repo. It is safe to delete, because the app will recreate
+an empty one. The json for the recipes is in the root folder and can be used to
+import to the empty database (POST to /recipes).

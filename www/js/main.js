@@ -50,11 +50,11 @@ function recipeSelected(evt) {
     document.querySelector('#ingrList').replaceChildren(...ingrArr);
     // Add instructions
     let instrArr = new Array();
-    currRecipe.instructions.forEach(instrTxt => {
+    currRecipe.instructions.forEach(instr => {
         // Instruction list item.
-        let instr = document.createElement('li');
-        instr.innerHTML = instrTxt;
-        instrArr.push(instr);
+        let li = document.createElement('li');
+        li.innerHTML = instr.text;
+        instrArr.push(li);
     });
     document.querySelector('#instrList').replaceChildren(...instrArr);
     // Add reviews
@@ -127,24 +127,33 @@ function handleRating(evt) {
  * @param {*} evt 
  */
 function handleSubmit(evt) {
-    let recipy_id = recipeList[recipySelector.value].id;
     evt.preventDefault();
     const fdata = new FormData(evt.target);
-    let data = {}
-    fdata.forEach((value, key, data) => {
+    let data = new Object();
+    fdata.forEach((value, key, parent) => {
         data[key] = value;
     })
-    fetch('/review/'+recipy_id,{
+    data.recipe_id = currRecipe.id;
+    fetch('/review',{
         method:'POST',
         body:JSON.stringify(data),
         headers: {"Content-Type": "application/json"}
-    }).then(resp => resp.json()).then(rev => {
-        currRecipe.reviews.push(rev);
-        setReviews();
-    }).catch(alert);
+    }).then(
+        resp => {
+            if(resp.status != 200) {
+                alert(resp.statusText);
+            } else {
+                resp.json().then(rev => {
+                    currRecipe.reviews.push(rev);
+                    setReviews();
+                });
+            }
+        },
+        alert
+    ).catch(alert);
 }
 /**
- * Add rating stars do as container.
+ * Inject ratings stars into a container element.
  * @param {*} container Target container
  * @param {*} interacting True for interactive rating.
  * @param {*} rating Rating to display. 0=empty

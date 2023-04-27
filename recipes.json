@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "title": "Chokladbollar",
         "image": "chokladbollar.jpg",
         "url": "https://www.recepten.se/recept/chokladbollar.html",
@@ -64,26 +63,27 @@
             }
         ],
         "instructions": [
-            "Mät upp smör, strösocker och vaniljsocker i en bunke. Låt stå framme i rumstemperatur tills smöret blivit rumsvarmt. Vispa till en jämn smet med elvisp.",
-            "<p>Tillsätt kaffe, kakao, havregryn och kokosflingor och rör till en jämn smet med elvisp.</p><p>Kör gärna lite extra, gärna ca 5 minuter med elvispen så blir smeten ännu godare.</p>",
-            "<p>Häll upp kokosflingor eller pärlsocker i en djup tallrik. Rulla bollar i valfri storlek av smeten och rulla bollarna i kokosflingorna eller pärlsockret.</p><p>Lägg chokladbollarna i en burk och förvara i kylskåp. De går också att frysa in.</p>",
-            "<p>Servera chokladbollarna kylskåpskalla, då är de godast.</p><p>Man kan också låta dom stå framme i rumstemperatur en stund så blir de mjukare men även kladdigare.</p>"
+            {"text":"Mät upp smör, strösocker och vaniljsocker i en bunke. Låt stå framme i rumstemperatur tills smöret blivit rumsvarmt. Vispa till en jämn smet med elvisp."},
+            {"text":"<p>Tillsätt kaffe, kakao, havregryn och kokosflingor och rör till en jämn smet med elvisp.</p><p>Kör gärna lite extra, gärna ca 5 minuter med elvispen så blir smeten ännu godare.</p>"},
+            {"text":"<p>Häll upp kokosflingor eller pärlsocker i en djup tallrik. Rulla bollar i valfri storlek av smeten och rulla bollarna i kokosflingorna eller pärlsockret.</p><p>Lägg chokladbollarna i en burk och förvara i kylskåp. De går också att frysa in.</p>"},
+            {"text":"<p>Servera chokladbollarna kylskåpskalla, då är de godast.</p><p>Man kan också låta dom stå framme i rumstemperatur en stund så blir de mjukare men även kladdigare.</p>"}
         ],
         "reviews": [
             {
                 "text": "Goda bollar. passar bra till en kopp kaffe!",
                 "rating": 4,
+                "email":"sigge.s@someverylongemail.com",
                 "name": "Sigge"
             },
             {
                 "text": "Helt okej!",
                 "rating": 3,
+                "email":"tor.t@someverylongemail.com",
                 "name": "Tor"
             }
         ]
     },
     {
-        "id": 2,
         "title": "Pekanpaj",
         "image": "pekanpaj.jpg",
         "url": "https://www.recepten.se/recept/pekanpaj.html",
@@ -172,18 +172,18 @@
             }
         ],
         "instructions": [
-            "Mät upp vetemjöl, salt och strösocker i en bunke. Blanda.",
-            "Tillsätt smöret skuret i bitar och vatten.",
-            "Arbeta ihop till en deg för hand eller med maskin.",
-            "Tryck ut pajdegen i pajformen så den blir jämntjock. Nagga med en gaffel och ställ in i kylskåpet under tiden du gör fyllningen (eller längre tid).",
-            "Börja med fyllningen. Hacka pekannötterna grovt.",
-            "Smält smöret, när drygt hälften smält, tag bort från värmen. Rör om tills resten av smöret smält.",
-            "Tillsätt sirap och ägg. Vispa med en handvisp till en jämn smet.",
-            "Sätt kastrullen på plattan och värm på medelhög värme under vispning. När smeten börjar tjockna, sänk värmen och låt koka försiktigt ca 2-3 minuter, rör om då och då.",
-            "Tag bort kastrullen från värmen och tillsätt de hackade pekannötterna, vaniljsocker och salt. Blanda till en jämn smet med handvispen. Nu är fyllningen klar.",
-            "Häll fyllningen i det ogräddade pajskalet.",
-            "Grädda pekanpajen i nedre delen av ugnen i 150°C i 40 minuter.",
-            "Låt pekanpajen svalna och servera ljummen, rumstempererad eller kylskåpskall med vispad grädde."
+            {"text":"Mät upp vetemjöl, salt och strösocker i en bunke. Blanda."},
+            {"text":"Tillsätt smöret skuret i bitar och vatten."},
+            {"text":"Arbeta ihop till en deg för hand eller med maskin."},
+            {"text":"Tryck ut pajdegen i pajformen så den blir jämntjock. Nagga med en gaffel och ställ in i kylskåpet under tiden du gör fyllningen (eller längre tid)."},
+            {"text":"Börja med fyllningen. Hacka pekannötterna grovt."},
+            {"text":"Smält smöret, när drygt hälften smält, tag bort från värmen. Rör om tills resten av smöret smält."},
+            {"text":"Tillsätt sirap och ägg. Vispa med en handvisp till en jämn smet."},
+            {"text":"Sätt kastrullen på plattan och värm på medelhög värme under vispning. När smeten börjar tjockna, sänk värmen och låt koka försiktigt ca 2-3 minuter, rör om då och då."},
+            {"text":"Tag bort kastrullen från värmen och tillsätt de hackade pekannötterna, vaniljsocker och salt. Blanda till en jämn smet med handvispen. Nu är fyllningen klar."},
+            {"text":"Häll fyllningen i det ogräddade pajskalet."},
+            {"text":"Grädda pekanpajen i nedre delen av ugnen i 150°C i 40 minuter."},
+            {"text":"Låt pekanpajen svalna och servera ljummen, rumstempererad eller kylskåpskall med vispad grädde."}
         ],
         "reviews": []
     }
