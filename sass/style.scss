@@ -1,0 +1,202 @@
+$page-bg: rgb(184, 169, 155);
+$bg-a: rgb(255, 254, 247);
+$bg-b: rgb(243, 248, 226);
+$fg-a: rgb(12, 12, 11);
+$fg-b: #1a2835;
+$fg-c: #142718;
+$font-a: Verdana, Geneva, Tahoma, sans-serif;
+
+/* Media widths */
+@media screen and (min-width: 800px) {
+    main {
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
+@media screen and (max-width: 800px) {
+    main {
+      width: 100%;
+      min-width: 400px;
+    }
+}
+h1 { font-size: xx-large; padding: 1pt; margin-top: 2pt; margin-bottom: 10pt;}
+h2 { font-size: x-large; padding: 1pt; margin-top: 2pt; margin-bottom: 7pt;}
+h3 { font-size: large; padding: 1pt; margin-top: 2pt; margin-bottom: 5pt;}
+em { font-style: italic; }
+body {
+    background-color: $page-bg;
+    font-family: $font-a;
+}
+p {
+    margin-bottom: 5pt;
+}
+.block { display: block; }
+.center { text-align: center; }
+.bold { font-weight: bold; }
+.page {
+    background-color: $bg-b;
+    display: grid;
+}
+.page-default {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+}
+header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+}
+#pageInfo {
+    background-color: $bg-b;
+    color: var(--fg-b);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+}
+#pageInstr, #pageIngr, #pageRev {
+    background-color: $bg-a;
+    color: $fg-a;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    grid-row-start: 3;
+}
+@media screen and (min-width: 800px) {
+    #pageIngr {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        min-width: 300px;
+    }
+    #pageInstr {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #pageRev { grid-row-start: 4; }
+    footer { grid-row-start: 5; }
+}
+@media screen and (max-width: 800px) {
+    #pageIngr {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+    }
+    #pageInstr {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+    }
+    #pageRev { grid-row-start: 5; }
+    footer { grid-row-start: 6;}
+}
+#pageRev {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+footer {
+    padding: 40pt;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.default-image {
+    background-image: url('/img/default.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+.hdr-nav { width: 100%; font-size: x-large;}
+#navSel {
+    margin: 10pt;
+    padding: 5pt;
+    background-color: $bg-b;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#infoImage {
+    background-image: url('/img/dummy.jpg');
+    margin-top: 10pt;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+#infoTitle { font-size: xx-large; padding: 1pt; margin-top: 5pt; margin-bottom: 10pt; }
+#infoSummary { font-size: large; padding: 1pt; margin-bottom: 5pt; }
+#infoDetails { font-size: medium; padding: 1pt; }
+#infoSource { font-size: small; padding: 5pt; color: $fg-b; text-align: center; font-style: italic; }
+#infoTitle, #infoDetails {
+    margin-left: 10pt;
+    margin-right: 10pt;
+}
+#ingrServings { display: block;}
+#ingrList {
+    list-style: none;
+    list-style-position: inside;
+}
+#ingrList li {
+    margin-bottom: 10pt;
+}
+.ingr-sec {
+    font-size: large;
+    font-weight: bold;
+}
+#instrList {
+    list-style: decimal;
+    list-style-position: outside;
+    margin-left: 20pt;
+}
+#instrList li {
+    margin-bottom: 20pt;
+}
+form label, input, textarea, button {
+    display: block;
+}
+form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+.input-item {
+    width: 100%;
+}
+.rt-bt {
+    margin: 1px;
+    padding: 0pt;
+    width: 20pt;
+    height: 20pt;
+    background-color: #ffffff00;
+    border: none;
+    background-size: contain;
+
+}
+.st-filled {
+    background-image: url('/img/star-filled.svg');
+}
+.st-empty {
+    background-image: url('/img/star-empty.svg');
+}
+#revList {
+	article {
+		margin-bottom: 10pt;
+		padding: 5px;
+		background-color: $bg-a;
+		color: $fg-b;
+		display: grid;
+		border-bottom: 1px solid dimgray;
+	}
+	.rev-name { grid-row: 2; grid-column: 1;}
+	.rev-rating { grid-row: 1; grid-column: 1;}
+	.rev-text { grid-column: 2; grid-row-start: 1; grid-column-end: 3;}
+}
+.swagger-link {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 3px;
+    background-color: rgba(252, 255, 240, 0.397);
+    color: black;
+}
